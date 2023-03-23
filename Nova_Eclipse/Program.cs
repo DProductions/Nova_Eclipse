@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Threading.Tasks;
 
 
 
@@ -21,11 +23,12 @@ namespace Nova_Eclipse
         internal class Program
         {
             // 2nd edit - 2nd push 13 March 2023
-            String myBDRMRoom, mybath1Room, myspareRM1Room, myStudyRoom, myHallwayRoom, myKitchenRoom, myDiningRMRoom, myLivingRMRoom, myBath2Room;
-            String knifeWeapon, pistolWeapon, punchWeapon, kickWeapon;
-            String healPotion, revivePotion;
-            String oneTreasure, fiveTreasure, tenTreasure, twentyTreasure;
-            String flashlightItem, ropeItem, batteriesItem, watchItem;
+            string myRoom1, myRoom2, myRoom3, myRoom4, myRoom5, myRoom6, myRoom7; myRoom8, myRoom9
+            string myBackyard, myFrontDoor;
+            string myWeapons1, myWeapons2, myWeapons3, myWeapons4;
+            string myPotions1, myPotions2;
+            string treasure1, treasure2, treasure3, treasure4;   
+            string myItems1, myItems2, myitems3, myitems4;
 
             static void Main(string[] args)
             {
@@ -63,49 +66,140 @@ namespace Nova_Eclipse
                                 "                      |_____________|_____________|_______|    |\n" +
                                 "                                                       Front Door\n" +
                                 "\n" +
-                                "\n" +
-                                " 1. My Bedroom " +
-                                " 2. Bathroom 1 " +
-                                " 3. Spare Room " +
-                                " 4. Study " +
-                                " 5. Hallway " +
-                                " 6. Kitchen " +
-                                " 7. Dining Room " +
-                                " 8. Living Room " +
-                                " 9. Bathroom 2 "
-                                );
+                                "\n"  );
+                            try {      
+                                string line;
+                               
+                                StreamReader sr = new StreamReader(@"..\..\..\..\Nova_Eclipse\Nova_Eclipse\Variables\rooms.txt");
+                                line = sr.ReadLine();
+                            
+                                while (line!= null) {  
+                                    Console.WriteLine(line);
+                                    line =  sr.ReadLine();
+                                }
+
+                                }
+                        
+                            finally
+                                {
+                                  var wait = Task.Run(async delegate
+                                     {
+                                      await Task.Delay(TimeSpan.FromSeconds(2));
+                                      return;
+                                      });
+                                  wait.Wait();
+                                  Console.WriteLine("\nPlease make next selection\n");
+                                }
+                               
 
                             break;
 
                         case 2:
-                            Console.WriteLine("____ Weapons____\n" +
-                            "   1 - Pistol\n" +
-                            "   2 - Knife\n" +
-                            "   3 - Punch\n" +
-                            "   4 - Kick\n");
+                            Console.WriteLine("____ Weapons____\n" );
+                            try {      
+                                string line;
+                               
+                                StreamReader sr = new StreamReader(@"..\..\..\..\Nova_Eclipse\Nova_Eclipse\Variables\weapons.txt");
+                                line = sr.ReadLine();
+                            
+                                while (line!= null) {  
+                                    Console.WriteLine(line);
+                                    line =  sr.ReadLine();
+                                }
+                                sr.Close();
+                                
+                                }
+                            finally
+                                {  
+                                  var wait = Task.Run(async delegate
+                                     {
+                                      await Task.Delay(TimeSpan.FromSeconds(2));
+                                      return;
+                                      });
+                                  wait.Wait();
+                                Console.WriteLine("\nPlease make next selection\n");
+                                }
                             break;
 
                         case 3:
-                            Console.WriteLine("____Potions____\n" +
-                           "   1 - Heal\n" +
-                           "   2 - Revive\n");
+                            Console.WriteLine("____Potions____\n" );
+                            try {      
+                                string line;
+                               
+                                StreamReader sr = new StreamReader(@"..\..\..\..\Nova_Eclipse\Nova_Eclipse\Variables\potions.txt");
+                                line = sr.ReadLine();
+                            
+                                while (line!= null) {  
+                                    Console.WriteLine(line);
+                                    line =  sr.ReadLine();
+                                }
+                                sr.Close();
+                                
+                                }
+                            finally
+                                {
+                                  var wait = Task.Run(async delegate
+                                     {
+                                      await Task.Delay(TimeSpan.FromSeconds(2));
+                                      return;
+                                      });
+                                  wait.Wait();
+                                Console.WriteLine("\nPlease make next selection\n");
+                                }
                             break;
 
                         case 4:
-                            Console.WriteLine("____Treasure____\n" +
-                            "   1 - $1.00\n" +
-                            "   2 - $5.00\n" +
-                            "   3 _ $10.00\n" +
-                            "   4 - $20.00\n");
+                            Console.WriteLine("____Treasure____\n" );
+                            try {      
+                                string line;
+                               
+                                StreamReader sr = new StreamReader(@"..\..\..\..\Nova_Eclipse\Nova_Eclipse\Variables\treasure.txt");
+                                line = sr.ReadLine();
+                            
+                                while (line!= null) {  
+                                    Console.WriteLine(line);
+                                    line =  sr.ReadLine();
+                                }
+                                sr.Close();
+                                
+                                }
+                            finally
+                                {
+                                  var wait = Task.Run(async delegate
+                                     {
+                                      await Task.Delay(TimeSpan.FromSeconds(2));
+                                      return;
+                                      });
+                                  wait.Wait();
+                                Console.WriteLine("\nPlease make next selection\n");
+                                }
                             break;
 
                         case 5:
-                            Console.WriteLine("____Items____\n" +
-                            "   1 - Flashlight\n" +
-                            "   2 - Rope\n" +
-                            "   3 _ Batteries\n" +
-                            "   4 - Watch\n");
-
+                            Console.WriteLine("____Items____\n" );
+                            try {      
+                                string line;
+                               
+                                StreamReader sr = new StreamReader(@"..\..\..\..\Nova_Eclipse\Nova_Eclipse\Variables\items.txt");
+                                line = sr.ReadLine();
+                            
+                                while (line!= null) {  
+                                    Console.WriteLine(line);
+                                    line =  sr.ReadLine();
+                                }
+                                sr.Close();
+                                
+                                }
+                            finally
+                                {
+                                  var wait = Task.Run(async delegate
+                                     {
+                                      await Task.Delay(TimeSpan.FromSeconds(2));
+                                      return;
+                                      });
+                                  wait.Wait();
+                                Console.WriteLine("\nPlease make next selection\n");
+                                }
                             break;
 
                         case 6:
@@ -114,7 +208,7 @@ namespace Nova_Eclipse
                             break;
 
                         default:
-                            Console.WriteLine("Invalid Entry. Please make a selection. ");
+                            Console.WriteLine("\n***Invalid Entry. Please make a selection.***\n ");
 
                             break;
                     }
